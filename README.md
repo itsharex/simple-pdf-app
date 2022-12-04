@@ -4,7 +4,7 @@
 
 ### I just wanted something simple to merge PDFs and also provide a gui so friends and family can use it who are not familiar with the command line.
 
-#### Requirements
+#### requirements.txt (not needed if you use .exe)
 
 - Python `3.9.13`
 - Tcl `0.2`
