@@ -1,12 +1,14 @@
 # Hello Everyone
 
-## This is a simple PDF Merger GUI made in Python, offline and uses only two external packages.
+## This is a simple PDF Merger GUI made in Python.
 
 ### I just wanted something simple to merge PDFs and also provide a gui so friends and family can use it who are not familiar with the command line.
 
+#### Still WIP and I intend of adding more features.
+
 #### requirements.txt (not needed if you use .exe)
 
-- Python `3.9.13`
+- Python `3.9.13 or higher`
 - Tcl `0.2`
 - PyPDF2 `2.11.2`
 
