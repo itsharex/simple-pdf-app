@@ -23,5 +23,5 @@
 #### Run with python
 
 - Download the .py file from the releases page
-- Install the requirements
-- Run the .py file with ```python pdfmerger.py```
+- Install the requirements using `pip install -r requirements.txt`
+- Run the .py file with ```python gui/pdfmerger.py```
