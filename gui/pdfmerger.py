@@ -1,7 +1,3 @@
-# A simple PDF Merger by Ivan Ryan
-# I really just wanted a easier way to merge PDFs on my computer than adobe 
-# I also opted for a GUI because my dad would also use it.
-# Version 0.2.0
 import tkinter as tk
 import sv_ttk
 from tkinter import ttk
@@ -32,7 +28,7 @@ style = ttk.Style()
 style.configure("TButton", background="black", foreground="black", font=("Arial", 10))
 
 # Create button to exec clear_pdfs
-clear_button = ttk.Button(root, text="Clear", command=clear_pdfs)
+clear_button = ttk.Button(root, text="Clear All", command=clear_pdfs)
 clear_button.pack(pady=10)
 
 # Create a button for selecting PDF files
@@ -47,12 +43,13 @@ def handle_select_pdfs():
     # Use the file dialog to select PDF files
     files = filedialog.askopenfilenames(title="Select PDF Files", filetypes=[("PDF files", "*.pdf")])
 
-    # Add each selected file to the list of selected PDFs
-    for file in files:
-        selected_pdfs.append(file)
+    # Add the first selected PDF to the beginning of the list of selected PDFs
+    if files:
+        # Add the remaining selected PDFs to the end of the list of selected PDFs
+        selected_pdfs.extend(files)
 
-    # Update the list of selected PDFs displayed at the bottom of the window
-    selected_pdf_label["text"] = "\n".join(selected_pdfs)
+        # Update the list of selected PDFs displayed at the bottom of the window
+        selected_pdf_label["text"] = "\n".join(selected_pdfs)
 
 # Register the select PDF files button event handler
 select_button.config(command=handle_select_pdfs)
@@ -62,44 +59,21 @@ selected_pdf_label = tk.Label(root, text="No PDF files selected..")
 selected_pdf_label.pack(padx=10, pady=10)
 selected_pdf_label.configure(background="black", foreground="white")
 
-# Create a function to move a selected PDF up in the list
-def move_pdf_up(index):
+# Create a function to remove a selected PDF from the list of selected PDFs
+def remove_pdf(index):
     global selected_pdfs
 
-    # Check if the PDF is already at the top of the list
-    if index == len(selected_pdfs) + 1:
-        return
-
-    # Swap the PDF with the one above it in the list
-    selected_pdfs[index], selected_pdfs[index - 1] = selected_pdfs[index - 1], selected_pdfs[index]
+    # Remove the PDF from the list of selected PDFs
+    selected_pdfs.pop(index)
 
     # Update the list of selected PDFs displayed at the bottom of the window
     selected_pdf_label["text"] = "\n".join(selected_pdfs)
 
-move_up_button = ttk.Button(root, text="🔼")
-move_up_button.configure(width=2)
-move_up_button.pack(padx=10, pady=10)
-move_up_button.config(command=lambda: move_pdf_up(selected_pdfs.index(selected_pdf_label["text"].split("\n")[0])))
+remove_button = ttk.Button(root, text="🗑️")
+remove_button.configure(width=2)
+remove_button.pack(padx=10, pady=10)
+remove_button.config(command=lambda: remove_pdf(selected_pdfs.index(selected_pdf_label["text"].split("\n")[0])))
 
-# Create a function to move a selected PDF down in the list
-def move_pdf_down(index):
-    global selected_pdfs
-
-    # Check if the PDF is already at the bottom of the list
-    if index == len(selected_pdfs) - 1:
-        return
-
-    # Swap the PDF with the one below it in the list
-    selected_pdfs[index], selected_pdfs[index + 1] = selected_pdfs[index + 1], selected_pdfs[index]
-
-    # Update the list of selected PDFs displayed at the bottom of the window
-    selected_pdf_label["text"] = "\n".join(selected_pdfs)
-
-move_down_button = ttk.Button(root, text="🔽")
-move_down_button.configure(width=2)
-move_down_button.pack(padx=10, pady=10)
-move_down_button.pack(padx=10, pady=10)
-move_down_button.config(command=lambda: move_pdf_down(selected_pdfs.index(selected_pdf_label["text"].split("\n")[0])))
 
 # Create a button for merging the selected PDFs
 merge_button = ttk.Button(root, text="Merge PDFs")
@@ -136,11 +110,8 @@ def handle_merge_pdfs():
 
     tk.messagebox.showinfo("Success", "PDFs merged successfully!")
 
-# Register the merge PDFs button event handler
-merge_button.config(command=handle_merge_pdfs)
-
 # Add version number bottom right
-version_label = tk.Label(root, text="Ivan Ryan - v0.2.0 - 05 DEC 22")
+version_label = tk.Label(root, text="Ivan Ryan - v0.3.0 - 08 DEC 22")
 version_label.pack(side="bottom", anchor="se")
 version_label.configure(background="black", foreground="white")
 
