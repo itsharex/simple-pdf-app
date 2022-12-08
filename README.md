@@ -1,10 +1,10 @@
 # Hello Everyone
 
-## This is a simple PDF Merger GUI made in Python.
+## This is a simple PDF Merger GUI tool made in Python
 
-### I just wanted something simple to merge PDFs and also provide a gui so friends and family can use it who are not familiar with the command line.
+### I just wanted something simple and fast to merge PDFs
 
-#### Still WIP and I intend of adding more features.
+#### Still WIP and I intend of adding more features and UI changes
 
 #### requirements.txt (not needed if you use .exe)
 
