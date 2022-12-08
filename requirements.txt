@@ -1,2 +1,3 @@
-Tcl==0.2
-PyPDF2==2.11.2
+tkinter==3.8.8
+sv_ttk==0.5
+PyPDF2==1.26.0
