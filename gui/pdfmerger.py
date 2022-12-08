@@ -2,8 +2,8 @@
 # I really just wanted a easier way to merge PDFs on my computer than adobe 
 # I also opted for a GUI because my dad would also use it.
 # Version 0.2.0
-
 import tkinter as tk
+import sv_ttk
 from tkinter import ttk
 from tkinter import filedialog
 from PyPDF2 import PdfFileMerger
@@ -12,8 +12,9 @@ from PyPDF2 import PdfFileMerger
 root = tk.Tk()
 root.title("PDF Merger")
 root.geometry("400x400")
-root.attributes("-alpha", 0.8)
+root.attributes("-alpha", 0.9)
 root.configure(background="black")
+root.iconbitmap("gui\logo.ico")
 
 # Create a list to store the selected PDF files
 selected_pdfs = []
@@ -139,9 +140,12 @@ def handle_merge_pdfs():
 merge_button.config(command=handle_merge_pdfs)
 
 # Add version number bottom right
-version_label = tk.Label(root, text="v0.2.0 - 05 DEC 22")
+version_label = tk.Label(root, text="Ivan Ryan - v0.2.0 - 05 DEC 22")
 version_label.pack(side="bottom", anchor="se")
 version_label.configure(background="black", foreground="white")
+
+# Set Theme
+sv_ttk.set_theme("dark")
 
 # Run the main window loop
 root.mainloop()
