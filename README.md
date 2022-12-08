@@ -6,11 +6,13 @@
 
 #### Still WIP and I intend of adding more features and UI changes
 
-#### requirements.txt (not needed if you use .exe)
+#### requirements.txt
 
-- Python `3.9.13 or higher`
-- Tcl `0.2`
-- PyPDF2 `2.11.2`
+```
+tkinter==3.8.8
+sv_ttk==0.5
+PyPDF2==1.26.0
+```
 
 #### How to use
 
