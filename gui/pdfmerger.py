@@ -97,18 +97,21 @@ def handle_merge_pdfs():
             merger.append(pdf)
         except FileNotFoundError:
             tk.messagebox.showerror("Error", "Could not find specified PDF file(s). Please select valid PDF files.")
-            selected_pdfs = []
-            selected_pdf_label["text"] = "\n".join(selected_pdfs)
             return
 
-    # Use the file dialog to select the output file
-    output_file = filedialog.asksaveasfilename(title="Save Merged PDF", defaultextension=".pdf")
+    # Create a file dialog to choose where to save the merged PDF
+    save_path = filedialog.asksaveasfilename(title="Save Merged PDF", defaultextension=".pdf", filetypes=[("PDF files", "*.pdf")])
 
-    # Write the merged PDF to the output file
-    with open(output_file, "wb") as f:
-        merger.write(f)
+    # Save the merged PDF to the specified location
+    if save_path:
+        try:
+            merger.write(save_path)
+            tk.messagebox.showinfo("Success", "PDF files merged successfully!")
+        except Exception:
+            tk.messagebox.showerror("Error", "An error occurred while saving the merged PDF file.")
 
-    tk.messagebox.showinfo("Success", "PDFs merged successfully!")
+# Register the handle_merge_pdfs function as the event handler for the merge_button
+merge_button.config(command=handle_merge_pdfs)
 
 # Add version number bottom right
 version_label = tk.Label(root, text="Ivan Ryan - v0.3.0 - 08 DEC 22")
