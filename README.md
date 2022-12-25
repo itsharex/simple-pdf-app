@@ -6,14 +6,6 @@
 
 #### Still WIP and I intend of adding more features and UI changes
 
-#### requirements.txt
-
-```
-tkinter==3.8.8
-sv_ttk==0.5
-PyPDF2==1.26.0
-```
-
 #### How to use
 
 - Download the .exe file from the releases page
@@ -22,8 +14,8 @@ PyPDF2==1.26.0
 - Click Merge
 - Clear the list if you want to merge more PDFs or messed up the order
 
-#### Run with python
+#### Run from source with python
 
 - Download the .py file from the releases page
-- Install the requirements using `pip install -r requirements.txt`
-- Run the .py file with ```python gui/pdfmerger.py```
+- Install the requirements using `pip3 install -r requirements.txt`
+- Run the .py file with ```python3 gui/pdfmerger.py```
