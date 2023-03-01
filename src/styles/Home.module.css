@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+}
+
+.header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.pdfInput {
+  margin-bottom: 2rem;
+}
+
+.pdfList {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.pdfItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #000000;
+  box-shadow: 0px 2px 8px -1px #0000001a;
+  margin-bottom: 0.5rem;
+}
+
+.pdfName {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.pdfRemove {
+  margin-left: 1rem;
+}
+
+.pdfActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pdfActions button {
+  background-color: #fff;
+  border: 1px solid #d2d6dc;
+  color: #4a5568;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.pdfActions button:hover {
+  background-color: #f7fafc;
+}
