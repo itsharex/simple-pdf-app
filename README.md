@@ -6,5 +6,3 @@
 
 #### Still WIP and I intend of adding more features and UI changes
 
-#### Still WIP and I intend of adding more features and UI changes
-
