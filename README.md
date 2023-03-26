@@ -1,5 +1,3 @@
-# Hello Everyone
-
 ## This is a simple PDF Utility GUI tool being created using Tauri / NextJS 13
 
 ### I just wanted something simple and fast to merge PDFs
