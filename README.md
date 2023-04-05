@@ -1,4 +1,4 @@
-# PDF Utility GUI Tool
+# A Simple PDF GUI App
 
 ## Overview
 
