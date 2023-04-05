@@ -19,7 +19,7 @@ More features are also WIP
 
 ## Technologies Used
 
--   Tauri
+-   Tauri framework (Rust)
 -   NextJS 13
 -   React
 -   TypeScript
