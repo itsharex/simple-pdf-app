@@ -3,12 +3,13 @@
   --border-radius: 12px;
   --font-sans: 'Inter', sans-serif;
   --font-mono: 'Fira Code', 'Roboto Mono', monospace;
+  --font-size-base: 16px;
+  --font-size-heading: 2rem;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-
-
+  --primary-color: #0070f3;
 
   --tile-start-rgb: 239, 245, 249;
   --tile-end-rgb: 228, 232, 233;
@@ -33,6 +34,7 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --primary-color: #0070f3;
 
     --tile-start-rgb: 2, 13, 46;
     --tile-end-rgb: 2, 5, 19;
@@ -64,9 +66,23 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   font-family: var(--font-sans);
+  font-size: var(--font-size-base);
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: black;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-heading);
 }
