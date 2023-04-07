@@ -10,13 +10,13 @@ const Sidebar: React.FC<SidebarProps> = ({ open }) => {
     <div className={`${styles.sidebar} ${open ? styles.open : ''}`}>
       <ul>
         <li>
-          <button>Tool 1</button>
+          <button className={styles.toolButton}>Tool 1</button>
         </li>
         <li>
-          <button>Tool 2</button>
+          <button className={styles.toolButton}>Tool 2</button>
         </li>
         <li>
-          <button>Tool 3</button>
+          <button className={styles.toolButton}>Tool 3</button>
         </li>
       </ul>
     </div>
