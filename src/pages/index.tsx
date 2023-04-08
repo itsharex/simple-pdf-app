@@ -41,21 +41,18 @@ const Home: React.FC = () => {
           My PDF Tools is a collection of tools to help you manage and edit your
           PDF files.
         </p>
-        <h2 className={styles.toolsHeader}>Available Tools:</h2>
-        <ul className={styles.toolsList}>
-          <li>PDF Merger</li>
-          <li>PDF Splitter</li>
-          <li>PDF to Image</li>
-          <li>Image to PDF</li>
-          <li>Compress PDF</li>
-          <li>Unlock PDF</li>
-        </ul>
-        <div className={styles.pdfButtonContainer}>
-          <a href="#" download>
-            <button className={styles.downloadAppButton}>
-              Download Tauri App
-            </button>
-          </a>
+
+        <div className={styles.toolsContainer}>
+          <div className={styles.toolBox}>
+            <div className={styles.toolIcon} />
+            <h2>PDF Merger</h2>
+            <p className={styles.description}>
+              Merge multiple PDF files into a single file.
+            </p>
+            <a href="/pdfmerger" className={styles.toolButton}>
+              Merge PDF
+            </a>
+          </div>
         </div>
       </main>
     </div>
