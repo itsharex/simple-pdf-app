@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import styles from '@/styles/home.module.css';
 import { DefaultSeo } from 'next-seo';
 
@@ -49,9 +50,9 @@ const Home: React.FC = () => {
             <p className={styles.description}>
               Merge multiple PDF files into a single file.
             </p>
-            <a href="/pdfmerger" className={styles.toolButton}>
-              Merge PDF
-            </a>
+            <Link href="/pdfmerger">
+              <a className={styles.toolButton}>Merge PDF</a>
+            </Link>
           </div>
         </div>
       </main>
