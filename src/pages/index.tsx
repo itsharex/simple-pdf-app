@@ -1,14 +1,36 @@
 import Head from 'next/head';
 import styles from '@/styles/home.module.css';
+import { DefaultSeo } from 'next-seo';
+
+const SEO = {
+  title: 'A Very Simple PDF App',
+  description: 'All-in-One PDF App 100% Free.',
+  openGraph: {
+    title: 'A Very Simple PDF App',
+    description: 'All-in-One PDF App 100% Free.',
+    url: 'https://simplepdf.vercel.app/',
+    type: 'website',
+    images: [
+      {
+        url: 'https://cdn.statically.io/gh/Sudo-Ivan/MyWebsite-Assets/main/images/website/pdfmerger/pdfmergershowcase.png',
+        width: 1200,
+        height: 630,
+        alt: 'A Very Simple PDF App Preview',
+      },
+    ],
+  },
+};
 
 const Home: React.FC = () => {
   return (
     <div className={styles.appContainer}>
       <Head>
-        <title>My PDF Tools</title>
+        <title>My PDF App</title>
         <meta name="description" content="A collection of PDF tools" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <DefaultSeo {...SEO} />
 
       <header className={styles.header}>
         <h1>Welcome to My Simple PDF App</h1>
