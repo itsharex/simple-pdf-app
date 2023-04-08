@@ -1,4 +1,4 @@
-# A Simple PDF GUI App
+# A Simple PDF App
 
 ## Overview
 
