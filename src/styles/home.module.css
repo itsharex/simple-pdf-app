@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: #00021d;
+  background-color: #00021d73;
   font-family: 'Open Sans', sans-serif;
   color: #fff;
 }
@@ -10,10 +10,10 @@
 .header {
   display: flex;
   align-items: center;
-  background-color: #000c69;
   padding: 1rem;
   font-size: 2rem;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  align-self: center;
 }
 
 .toolButton {
