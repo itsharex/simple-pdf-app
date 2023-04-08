@@ -159,7 +159,7 @@ const PDFMerger: React.FC = () => {
             <i className="fa fa-github" aria-hidden="true"></i>
           </a>
         </div>
-  
+
         <div className={styles.header}>
           <h1>PDF Merger</h1>
         </div>

@@ -37,6 +37,16 @@ const Home: React.FC = () => {
         <h1>Welcome to My Simple PDF App</h1>
       </header>
 
+      <div className={styles.githubLink}>
+        <a
+          href="https://github.com/Sudo-Ivan/simple-pdf-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fa fa-github" aria-hidden="true"></i>
+        </a>
+      </div>
+
       <main className={styles.main}>
         <p className={styles.intro}>
           My PDF Tools is a collection of tools to help you manage and edit your
