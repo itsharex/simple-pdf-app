@@ -79,7 +79,6 @@
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-
 .pdfButton:hover {
   background-color: #0051a1;
 }
@@ -92,7 +91,6 @@
   padding: 0.9rem 1.5rem;
   cursor: pointer;
   font-size: 0.9rem;
-  margin-left: 98rem;
   margin-right: 2rem;
   transition: background-color 0.2s ease-in-out;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
@@ -114,4 +112,21 @@
   margin-top: 2rem;
   border-radius: 50%;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.githubIcon:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .pdfButtonContainer {
+    margin-top: 2rem;
+  }
+
+  .downloadAppButton {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    position: static;
+  }
 }

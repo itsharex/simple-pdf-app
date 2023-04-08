@@ -148,3 +148,33 @@
   padding: 16px;
   border-radius: 8px;
 }
+
+@media (max-width: 600px) {
+  .header {
+    font-size: 1.5rem;
+  }
+
+  .pdfItem {
+    padding: 0.75rem;
+  }
+
+  .pdfName {
+    font-size: 0.9rem;
+  }
+
+  .pdfRemove button {
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+  }
+
+  .pdfButton {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .pdfFilename {
+    padding: 0.25rem;
+    font-size: 0.8rem;
+  }
+}

@@ -45,6 +45,9 @@ const PDFMerger: React.FC = () => {
       return;
     }
 
+    // Show a loading spinner while the PDFs are being merged
+    showAlert('Merging PDFs...', 'info');
+
     const mergedPdfDoc = await PDFDocument.create();
     for (const pdf of pdfs) {
       const pdfBytes = await pdf.arrayBuffer();
@@ -65,6 +68,7 @@ const PDFMerger: React.FC = () => {
     downloadLink.click();
     document.body.removeChild(downloadLink);
 
+    // Show a success message when the merge is complete
     showAlert('PDFs merged successfully!', 'success');
   };
 
@@ -72,6 +76,9 @@ const PDFMerger: React.FC = () => {
     e.dataTransfer.setData('text/plain', ''); // Required for Firefox
     draggedItem.current = index;
     e.dataTransfer.effectAllowed = 'move';
+
+    // Add visual cue by highlighting the dragged PDF
+    e.currentTarget.classList.add(styles.draggedPdf);
   };
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>, index: number) => {
@@ -88,19 +95,26 @@ const PDFMerger: React.FC = () => {
         newThumbnails.splice(index, 0, dragThumbnail);
         setPdfs(newPdfs);
         setThumbnails(newThumbnails);
+
+        // Add visual cue by highlighting the dropped PDF
+        const droppedPdf = document.getElementById(`pdf-${index}`);
+        droppedPdf?.classList.add(styles.droppedPdf);
+
         showAlert('PDF moved successfully!', 'success');
       }
     }
     draggedItem.current = null;
   };
-  
 
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     e.dataTransfer.dropEffect = 'move';
+
+    // Add visual cue by highlighting the drop target
+    e.currentTarget.classList.add(styles.dropTarget);
   };
 
-  const showAlert = (message: string, type: 'success' | 'error') => {
+  const showAlert = (message: string, type: 'success' | 'error' | 'info') => {
     const alertEl = document.createElement('div');
     alertEl.className = `${styles.pdfError} ${type === 'success' ? styles.pdfSuccess : styles.pdfError}`;
     alertEl.textContent = message;
@@ -109,6 +123,20 @@ const PDFMerger: React.FC = () => {
       document.body.removeChild(alertEl);
     }, 3000);
   };  
+
+  const handleDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
+    // Remove visual cue when the dragged item leaves the drop target
+    e.currentTarget.classList.remove(styles.dropTarget);
+  };
+
+  const handleDragEnd = (e: React.DragEvent<HTMLDivElement>) => {
+    // Remove visual cue when the drag operation ends
+    const draggedPdf = document.querySelector(`.${styles.draggedPdf}`);
+    draggedPdf?.classList.remove(styles.draggedPdf);
+
+    // Remove visual cue from drop target
+    e.currentTarget.classList.remove(styles.dropTarget);
+  };
 
   return (
     <>
