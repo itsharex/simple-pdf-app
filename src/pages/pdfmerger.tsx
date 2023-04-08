@@ -211,6 +211,9 @@ return (
         </button>
       </div>
     </div>
+    <footer className={styles.footer}>
+      Free and open-source, created by <a href="https://github.com/Sudo-Ivan" target="_blank" rel="noopener noreferrer">Sudo-Ivan</a>
+    </footer>
   </>
 );
  

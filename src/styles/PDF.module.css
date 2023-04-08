@@ -191,7 +191,7 @@
   position: fixed;
   top: 16px;
   right: 16px;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: #ffffff;
 }
 
@@ -204,4 +204,9 @@
 
 .githubStars {
   margin-left: 0.5rem;
+}
+
+.footer {
+  font-size: 16px;
+  text-align: center;
 }

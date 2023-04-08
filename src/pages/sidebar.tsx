@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '@/styles/sidebar.module.css';
+import Link from 'next/link';
 
 type SidebarProps = {
   open: boolean;
@@ -12,7 +13,9 @@ const Sidebar: React.FC<SidebarProps> = ({ open, onClose }) => {
     <div className={`${styles.sidebar} ${open ? styles.open : ''}`}>
       <ul>
         <li>
-          <button className={styles.toolButton}>Tool 1</button>
+        <Link href="/pdfmerger">
+          <button className={styles.toolButton}>PDF Merger</button>
+        </Link>
         </li>
         <li>
           <button className={styles.toolButton}>Tool 2</button>
@@ -27,5 +30,6 @@ const Sidebar: React.FC<SidebarProps> = ({ open, onClose }) => {
     </div>
   );
 };
+
 
 export default Sidebar;
