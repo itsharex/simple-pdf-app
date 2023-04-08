@@ -18,7 +18,11 @@ const Home: React.FC = () => {
         <a href="#" download>
           <button className={styles.downloadAppButton}>Download App</button>
         </a>
-        <a href="https://github.com/username/my-pdf-tools" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/username/my-pdf-tools"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span className={styles.githubIcon}></span>
         </a>
       </div>

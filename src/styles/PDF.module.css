@@ -124,7 +124,18 @@
   height: 100%;
   z-index: -1;
   animation: moveGradient 20s ease infinite;
-  background-image: linear-gradient(to right, #0011ff, #0070f3, #00b8e6, #00f0d1, #8cffa9, #f7ff7c, #ffac7e, #ff007e, #730080);
+  background-image: linear-gradient(
+    to right,
+    #0011ff,
+    #0070f3,
+    #00b8e6,
+    #00f0d1,
+    #8cffa9,
+    #f7ff7c,
+    #ffac7e,
+    #ff007e,
+    #730080
+  );
 }
 
 @keyframes moveGradient {

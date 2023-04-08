@@ -16,12 +16,15 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className="app-container">
       <Sidebar open={sidebarOpen} onClose={toggleSidebar} />
-      <button className={`sidebar-toggle ${sidebarOpen ? 'open' : ''}`} onClick={toggleSidebar}>
+      <button
+        className={`sidebar-toggle ${sidebarOpen ? 'open' : ''}`}
+        onClick={toggleSidebar}
+      >
         {sidebarOpen ? 'Close Sidebar' : 'Open Sidebar'}
       </button>
       <div className="main-container">
         <Component {...pageProps} />
       </div>
     </div>
-  );   
+  );
 }
