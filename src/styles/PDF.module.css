@@ -33,7 +33,6 @@
   overflow-y: auto; /* add this line to add a scrollbar when content exceeds maximum height */
 }
 
-
 .pdfItem {
   display: flex;
   justify-content: space-between;
