@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { PDFDocument } from 'pdf-lib';
 import styles from '@/styles/PDF.module.css';
+import Sidebar from './sidebar';
 
 const PDFMerger: React.FC = () => {
   const [pdfs, setPdfs] = useState<File[]>([]);
@@ -11,8 +12,10 @@ const PDFMerger: React.FC = () => {
   const handlePDFInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const { files } = e.target;
     if (files && files.length > 0) {
-      const newPdfs = Array.from(files);
-      setPdfs((prevPdfs) => [...prevPdfs, ...newPdfs]);
+      const pdfFiles = Array.from(files).filter((file) => file.type === 'application/pdf');
+      if (pdfFiles.length > 0) {
+        setPdfs((prevPdfs) => [...prevPdfs, ...pdfFiles]);
+      }
     }
   };
 
@@ -75,18 +78,18 @@ const PDFMerger: React.FC = () => {
     e.preventDefault();
     if (draggedItem.current !== null && draggedItem.current !== index) {
       const newPdfs = [...pdfs];
-      const dragItem = newPdfs[draggedItem.current];
-      newPdfs.splice(draggedItem.current, 1);
-      newPdfs.splice(index, 0, dragItem);
-      setPdfs(newPdfs);
-      setThumbnails((prevThumbnails) => {
-        const newThumbnails = [...prevThumbnails];
-        const dragItem = newThumbnails[draggedItem.current!];
-        newThumbnails.splice(draggedItem.current!, 1);
-        newThumbnails.splice(index, 0, dragItem);
-        return newThumbnails;
-      });
-      showAlert('PDF moved successfully!', 'success');
+      const newThumbnails = [...thumbnails];
+      const dragItem = newPdfs[draggedItem.current!];
+      const dragThumbnail = newThumbnails[draggedItem.current!];
+      newPdfs.splice(draggedItem.current!, 1);
+      newThumbnails.splice(draggedItem.current!, 1);
+      if (dragItem.type === 'application/pdf') {
+        newPdfs.splice(index, 0, dragItem);
+        newThumbnails.splice(index, 0, dragThumbnail);
+        setPdfs(newPdfs);
+        setThumbnails(newThumbnails);
+        showAlert('PDF moved successfully!', 'success');
+      }
     }
     draggedItem.current = null;
   };
@@ -117,21 +120,22 @@ const PDFMerger: React.FC = () => {
           <input type="file" multiple onChange={handlePDFInputChange} />
         </div>
         <div className={styles.pdfList}>
-        {pdfs && pdfs.map((pdf, index) => (
-          <div
-            key={pdf.name}
-            className={styles.pdfItem}
-            draggable
-            onDragStart={(e) => handleDragStart(e, index)}
-            onDrop={(e) => handleDrop(e, index)}
-            onDragOver={(e) => handleDragOver(e)}
-          >
-            <div className={styles.pdfName}>{pdf.name}</div>
-            <div className={styles.pdfRemove}>
-              <button onClick={() => handleRemovePDF(index)}>X</button>
-            </div>
-          </div>
-        ))}
+          {pdfs &&
+            pdfs.map((pdf, index) => (
+              <div
+                key={pdf.name}
+                className={styles.pdfItem}
+                draggable
+                onDragStart={(e) => handleDragStart(e, index)}
+                onDrop={(e) => handleDrop(e, index)}
+                onDragOver={(e) => handleDragOver(e)}
+              >
+                <div className={styles.pdfName}>{pdf.name}</div>
+                <div className={styles.pdfRemove}>
+                  <button onClick={() => handleRemovePDF(index)}>X</button>
+                </div>
+              </div>
+            ))}
         </div>
         <div className={styles.pdfActions}>
           <button className={styles.pdfButton} onClick={handleSortPDFs}>
@@ -156,6 +160,6 @@ const PDFMerger: React.FC = () => {
         </div>
       </div>
     </>
-  );
+  );  
 };
 export default PDFMerger;
