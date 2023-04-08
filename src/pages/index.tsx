@@ -13,7 +13,7 @@ const SEO = {
     type: 'website',
     images: [
       {
-        url: 'https://cdn.statically.io/gh/Sudo-Ivan/MyWebsite-Assets/main/images/website/pdfmerger/pdfmergershowcase.png',
+        url: 'https://cdn.statically.io/gh/Sudo-Ivan/MyWebsite-Assets/main/images/website/pdfmerger/pdfhomepage.png',
         width: 1200,
         height: 630,
         alt: 'A Very Simple PDF App Preview',
