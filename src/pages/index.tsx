@@ -50,7 +50,7 @@ const Home: React.FC = () => {
             <p className={styles.description}>
               Merge multiple PDF files into a single file.
             </p>
-            <Link href="/pdfmerger">
+            <Link href="/pdfmerger" legacyBehavior>
               <a className={styles.toolButton}>Merge PDF</a>
             </Link>
           </div>
