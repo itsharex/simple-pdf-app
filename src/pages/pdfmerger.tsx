@@ -9,18 +9,6 @@ const PDFMerger: React.FC = () => {
   const [thumbnails, setThumbnails] = useState<string[]>([]);
   const [mergedPdfName, setMergedPdfName] = useState<string>('merged.pdf');
   const draggedItem = useRef<number | null>(null);
-  const [githubStars, setGithubStars] = useState<number>(0);
-  const fetchGithubStars = async () => {
-    const response = await fetch(
-      'https://api.github.com/repos/USERNAME/REPOSITORY'
-    );
-    const data = await response.json();
-    setGithubStars(data.stargazers_count);
-  };
-
-  useEffect(() => {
-    fetchGithubStars();
-  }, []);
 
   const handlePDFInputChange = async (
     e: React.ChangeEvent<HTMLInputElement>
@@ -161,7 +149,7 @@ const PDFMerger: React.FC = () => {
   return (
     <>
       <div className={styles.container}>
-        {/* Add the GitHub icon and stars count */}
+        {/* Add the GitHub icon */}
         <div className={styles.github}>
           <a
             href="https://github.com/Sudo-Ivan/simple-pdf-app"
@@ -169,10 +157,9 @@ const PDFMerger: React.FC = () => {
             rel="noopener noreferrer"
           >
             <i className="fa fa-github" aria-hidden="true"></i>
-            <span className={styles.githubStars}>{githubStars}</span>
           </a>
         </div>
-
+  
         <div className={styles.header}>
           <h1>PDF Merger</h1>
         </div>

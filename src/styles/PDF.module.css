@@ -209,19 +209,3 @@
   font-size: 2.5rem;
   color: #ffffff;
 }
-
-.github a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-}
-
-.githubStars {
-  margin-left: 0.5rem;
-}
-
-.footer {
-  font-size: 16px;
-  text-align: center;
-}
