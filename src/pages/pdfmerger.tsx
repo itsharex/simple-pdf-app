@@ -220,13 +220,13 @@ const PDFMerger: React.FC = () => {
         </div>
       </div>
       <footer className={styles.footer}>
-        Dribble Artwork by {' '}
+        Dribble Artwork by{' '}
         <a
           href="https://dribbble.com/shots/19117799-Bounce-in-Space-2-backgrounds"
           target="_blank"
           rel="noopener noreferrer"
         >
-           Ivan Dubovik
+          Ivan Dubovik
         </a>
       </footer>
     </>
