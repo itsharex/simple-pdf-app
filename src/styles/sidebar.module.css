@@ -11,6 +11,29 @@
   transform: translateX(-250px);
 }
 
+.closeSidebarButton {
+  background-color: #3b3f4a;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 20px;
+  padding: 10px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+  width: calc(100% - 40px);
+}
+
+.closeSidebarButton:hover {
+  background-color: #4b505a;
+}
+
+
 .sidebar.open {
   transform: translateX(0);
 }

@@ -3,11 +3,23 @@ import { PDFDocument } from 'pdf-lib';
 import styles from '@/styles/PDF.module.css';
 import Sidebar from './sidebar';
 
+import { useEffect} from 'react';
+
 const PDFMerger: React.FC = () => {
   const [pdfs, setPdfs] = useState<File[]>([]);
   const [thumbnails, setThumbnails] = useState<string[]>([]);
   const [mergedPdfName, setMergedPdfName] = useState<string>('merged.pdf');
   const draggedItem = useRef<number | null>(null);
+  const [githubStars, setGithubStars] = useState<number>(0);
+  const fetchGithubStars = async () => {
+    const response = await fetch('https://api.github.com/repos/USERNAME/REPOSITORY');
+    const data = await response.json();
+    setGithubStars(data.stargazers_count);
+  };
+
+  useEffect(() => {
+    fetchGithubStars();
+  }, []);
 
   const handlePDFInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const { files } = e.target;
@@ -138,56 +150,69 @@ const PDFMerger: React.FC = () => {
     e.currentTarget.classList.remove(styles.dropTarget);
   };
 
-  return (
-    <>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <h1>PDF Merger</h1>
-        </div>
-        <div className={styles.pdfInput}>
-          <input type="file" multiple onChange={handlePDFInputChange} />
-        </div>
-        <div className={styles.pdfList}>
-          {pdfs &&
-            pdfs.map((pdf, index) => (
-              <div
-                key={pdf.name}
-                className={styles.pdfItem}
-                draggable
-                onDragStart={(e) => handleDragStart(e, index)}
-                onDrop={(e) => handleDrop(e, index)}
-                onDragOver={(e) => handleDragOver(e)}
-              >
-                <div className={styles.pdfName}>{pdf.name}</div>
-                <div className={styles.pdfRemove}>
-                  <button onClick={() => handleRemovePDF(index)}>X</button>
-                </div>
-              </div>
-            ))}
-        </div>
-        <div className={styles.pdfActions}>
-          <button className={styles.pdfButton} onClick={handleSortPDFs}>
-            Sort
-          </button>
-          <input
-            type="text"
-            value={mergedPdfName}
-            onChange={handleMergedPdfNameChange}
-            placeholder="Enter merged PDF filename"
-            className={styles.pdfFilename}
-          />
-          <button
-            className={`${styles.pdfButton} ${
-              pdfs.length === 0 ? styles.pdfButtonDisabled : ''
-            }`}
-            onClick={handleMergePDFs}
-            disabled={pdfs.length === 0}
-          >
-            Merge
-          </button>
-        </div>
+return (
+  <>
+    <div className={styles.container}>
+      {/* Add the GitHub icon and stars count */}
+      <div className={styles.github}>
+        <a
+          href="https://github.com/Sudo-Ivan/simple-pdf-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fa fa-github" aria-hidden="true"></i>
+          <span className={styles.githubStars}>{githubStars}</span>
+        </a>
       </div>
-    </>
-  );  
+
+      <div className={styles.header}>
+        <h1>PDF Merger</h1>
+      </div>
+      <div className={styles.pdfInput}>
+        <input type="file" multiple onChange={handlePDFInputChange} />
+      </div>
+      <div className={styles.pdfList}>
+        {pdfs &&
+          pdfs.map((pdf, index) => (
+            <div
+              key={pdf.name}
+              className={styles.pdfItem}
+              draggable
+              onDragStart={(e) => handleDragStart(e, index)}
+              onDrop={(e) => handleDrop(e, index)}
+              onDragOver={(e) => handleDragOver(e)}
+            >
+              <div className={styles.pdfName}>{pdf.name}</div>
+              <div className={styles.pdfRemove}>
+                <button onClick={() => handleRemovePDF(index)}>X</button>
+              </div>
+            </div>
+          ))}
+      </div>
+      <div className={styles.pdfActions}>
+        <button className={styles.pdfButton} onClick={handleSortPDFs}>
+          Sort
+        </button>
+        <input
+          type="text"
+          value={mergedPdfName}
+          onChange={handleMergedPdfNameChange}
+          placeholder="Enter merged PDF filename"
+          className={styles.pdfFilename}
+        />
+        <button
+          className={`${styles.pdfButton} ${
+            pdfs.length === 0 ? styles.pdfButtonDisabled : ''
+          }`}
+          onClick={handleMergePDFs}
+          disabled={pdfs.length === 0}
+        >
+          Merge
+        </button>
+      </div>
+    </div>
+  </>
+);
+ 
 };
 export default PDFMerger;
