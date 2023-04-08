@@ -1,5 +1,7 @@
 ![alt text](https://cdn.statically.io/gh/Sudo-Ivan/MyWebsite-Assets/main/images/website/pdfmerger/pdfmergershowcase.png)
 
+Using dribble artwork by Ivan Dubovik
+
 # A Simple PDF App
 
 ## Overview
