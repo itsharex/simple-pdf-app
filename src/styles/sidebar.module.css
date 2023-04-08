@@ -8,7 +8,7 @@
   width: 250px;
   z-index: 999;
   transition: transform 0.3s ease-in-out;
-  transform: translateX(-250px);
+  transform: translateX(-100%);
 }
 
 .closeSidebarButton {
@@ -68,4 +68,11 @@
 
 .toolButton.active {
   background-color: #3b3f4a;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80vw;
+    transform: translateX(-100%);
+  }
 }
