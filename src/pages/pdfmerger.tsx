@@ -1,8 +1,27 @@
 import { useState, useRef } from 'react';
 import { PDFDocument } from 'pdf-lib';
 import styles from '@/styles/PDF.module.css';
-
 import { useEffect } from 'react';
+import { DefaultSeo } from 'next-seo';
+
+const SEO = {
+  title: 'A Very Simple PDF App',
+  description: 'PDF App 100% Free & Open-Source.',
+  openGraph: {
+    title: 'A Very Simple PDF App',
+    description: 'PDF App 100% Free & Open-Source.',
+    url: 'https://simplepdf.vercel.app/',
+    type: 'website',
+    images: [
+      {
+        url: 'https://cdn.statically.io/gh/Sudo-Ivan/MyWebsite-Assets/main/images/website/pdfmerger/pdfapphomepage.png',
+        width: 1200,
+        height: 630,
+        alt: 'A Very Simple PDF App Preview',
+      },
+    ],
+  },
+};
 
 const PDFMerger: React.FC = () => {
   const [pdfs, setPdfs] = useState<File[]>([]);
