@@ -5,10 +5,10 @@ import { DefaultSeo } from 'next-seo';
 
 const SEO = {
   title: 'A Very Simple PDF App',
-  description: 'All-in-One PDF App 100% Free.',
+  description: 'PDF App 100% Free & Open-Source.',
   openGraph: {
     title: 'A Very Simple PDF App',
-    description: 'All-in-One PDF App 100% Free.',
+    description: 'PDF App 100% Free & Open-Source.',
     url: 'https://simplepdf.vercel.app/',
     type: 'website',
     images: [
@@ -34,7 +34,7 @@ const Home: React.FC = () => {
       <DefaultSeo {...SEO} />
 
       <header className={styles.header}>
-        <h1>Welcome to My Simple PDF App</h1>
+        <h1>Transform Your PDFs</h1>
       </header>
 
       <div className={styles.githubLink}>
@@ -43,7 +43,7 @@ const Home: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fa fa-github" aria-hidden="true"></i>
+          <i className="fa fa-github white" aria-hidden="true"></i>
         </a>
       </div>
 
