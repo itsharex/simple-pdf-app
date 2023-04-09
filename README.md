@@ -1,6 +1,6 @@
 ![alt text](https://cdn.statically.io/gh/Sudo-Ivan/MyWebsite-Assets/main/images/website/pdfmerger/pdfapphomepage.png)
 
-![alt text](https://cdn.statically.io/gh/Sudo-Ivan/MyWebsite-Assets/main/images/website/pdfmerger/pdfmergershowcase.png)
+![alt text](https://cdn.statically.io/gh/Sudo-Ivan/MyWebsite-Assets/main/images/website/pdfmerger/pdfmergershowcase1.png)
 
 Using dribble artwork by Ivan Dubovik
 
