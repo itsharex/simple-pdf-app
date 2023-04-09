@@ -1,5 +1,5 @@
 .sidebar {
-  background-color: #0e37995e;
+  background-color: #0e3899d5;
   color: white;
   height: 100%;
   position: fixed;
@@ -12,13 +12,13 @@
 }
 
 .closeSidebarButton {
-  background-color: #80272779;
+  background-color: #bd0c0cc2;
   border: none;
   color: white;
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  margin: 0 20px;
+  margin: 10px;
   padding: 10px;
   position: absolute;
   bottom: 10px;
