@@ -88,51 +88,64 @@ const PDFMerger: React.FC = () => {
     showAlert('PDFs merged successfully!', 'success');
   };
 
-  const handleDragStart = (
-    e: React.DragEvent<HTMLDivElement>,
-    index: number
-  ) => {
+const handleDragStart = (e: React.DragEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>, index: number) => {
+  if ('touches' in e) {
     e.dataTransfer.setData('text/plain', ''); // Required for Firefox
     draggedItem.current = index;
     e.dataTransfer.effectAllowed = 'move';
 
     // Add visual cue by highlighting the dragged PDF
     e.currentTarget.classList.add(styles.draggedPdf);
-  };
+  } else {
+    e.dataTransfer.setData('text/plain', ''); // Required for Firefox
+    draggedItem.current = index;
+    e.dataTransfer.effectAllowed = 'move';
 
-  const handleDrop = (e: React.DragEvent<HTMLDivElement>, index: number) => {
-    e.preventDefault();
-    if (draggedItem.current !== null && draggedItem.current !== index) {
-      const currentDraggedItem = draggedItem.current;
-      const newPdfs = [...pdfs];
-      const newThumbnails = [...thumbnails];
-      if (typeof currentDraggedItem === 'number') {
-        const dragItem = newPdfs[currentDraggedItem];
-        const dragThumbnail = newThumbnails[currentDraggedItem];
-        newPdfs.splice(currentDraggedItem, 1);
-        newThumbnails.splice(currentDraggedItem, 1);
-        if (dragItem.type === 'application/pdf') {
-          newPdfs.splice(index, 0, dragItem);
-          newThumbnails.splice(index, 0, dragThumbnail);
-          setPdfs(newPdfs);
-          setThumbnails(newThumbnails);
-          // Add visual cue by highlighting the dropped PDF
-          const droppedPdf = document.getElementById(`pdf-${index}`);
-          droppedPdf?.classList.add(styles.droppedPdf);
-          showAlert('PDF moved successfully!', 'success');
-        }
+    // Add visual cue by highlighting the dragged PDF
+    e.currentTarget.classList.add(styles.draggedPdf);
+  }
+};
+
+const handleDrop = (e: React.DragEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>, index: number) => {
+  e.preventDefault();
+  if (draggedItem.current !== null && draggedItem.current !== index) {
+    const currentDraggedItem = draggedItem.current;
+    const newPdfs = [...pdfs];
+    const newThumbnails = [...thumbnails];
+    if (typeof currentDraggedItem === 'number') {
+      const dragItem = newPdfs[currentDraggedItem];
+      const dragThumbnail = newThumbnails[currentDraggedItem];
+      newPdfs.splice(currentDraggedItem, 1);
+      newThumbnails.splice(currentDraggedItem, 1);
+      if (dragItem.type === 'application/pdf') {
+        newPdfs.splice(index, 0, dragItem);
+        newThumbnails.splice(index, 0, dragThumbnail);
+        setPdfs(newPdfs);
+        setThumbnails(newThumbnails);
+        // Add visual cue by highlighting the dropped PDF
+        const droppedPdf = document.getElementById(`pdf-${index}`);
+        droppedPdf?.classList.add(styles.droppedPdf);
+        showAlert('PDF moved successfully!', 'success');
       }
     }
-    draggedItem.current = null;
-  };
+  }
+  draggedItem.current = null;
+};
 
-  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
+const handleDragOver = (e: React.DragEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
+  e.preventDefault();
+  if ('touches' in e) {
     e.dataTransfer.dropEffect = 'move';
 
     // Add visual cue by highlighting the drop target
     e.currentTarget.classList.add(styles.dropTarget);
-  };
+  } else {
+    e.dataTransfer.dropEffect = 'move';
+
+    // Add visual cue by highlighting the drop target
+    e.currentTarget.classList.add(styles.dropTarget);
+  }
+};
 
   const showAlert = (message: string, type: 'success' | 'error' | 'info') => {
     const alertEl = document.createElement('div');
@@ -148,7 +161,7 @@ const PDFMerger: React.FC = () => {
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container} onTouchMove={(e) => e.preventDefault()}>
         {/* Add the GitHub icon */}
         <div className={styles.github}>
           <a
@@ -159,14 +172,17 @@ const PDFMerger: React.FC = () => {
             <i className="fa fa-github" aria-hidden="true"></i>
           </a>
         </div>
-
+  
         <div className={styles.header}>
           <h1>PDF Merger</h1>
         </div>
         <div className={styles.pdfInput}>
           <input type="file" multiple onChange={handlePDFInputChange} />
         </div>
-        <div className={styles.pdfList}>
+        <div
+          className={styles.pdfList}
+          onTouchMove={(e) => e.preventDefault()}
+        >
           {pdfs &&
             pdfs.map((pdf, index) => (
               <div
@@ -174,7 +190,9 @@ const PDFMerger: React.FC = () => {
                 className={styles.pdfItem}
                 draggable
                 onDragStart={(e) => handleDragStart(e, index)}
+                onTouchStart={(e) => handleDragStart(e, index)}
                 onDrop={(e) => handleDrop(e, index)}
+                onTouchEnd={(e) => handleDrop(e, index)}
                 onDragOver={(e) => handleDragOver(e)}
               >
                 <div className={styles.pdfName}>{pdf.name}</div>
