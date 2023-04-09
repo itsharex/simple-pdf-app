@@ -34,6 +34,13 @@ const PDFMerger: React.FC = () => {
     setThumbnails((prevThumbnails) =>
       prevThumbnails.filter((_, i) => i !== index)
     );
+
+    // Remove visual cue by removing the highlight from the deleted PDF
+    const deletedPdf = document.getElementById(`pdf-${index}`);
+    if (deletedPdf) {
+      deletedPdf.classList.remove(styles.droppedPdf);
+      deletedPdf.classList.remove(styles.draggedPdf);
+    }
   };
 
   const handleSortPDFs = () => {
