@@ -92,7 +92,7 @@ const PDFMerger: React.FC = () => {
     e: React.DragEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>,
     index: number
   ) => {
-    if ('touches' in e) {
+    if ('dataTransfer' in e) {
       e.dataTransfer.setData('text/plain', ''); // Required for Firefox
       draggedItem.current = index;
       e.dataTransfer.effectAllowed = 'move';
@@ -100,10 +100,8 @@ const PDFMerger: React.FC = () => {
       // Add visual cue by highlighting the dragged PDF
       e.currentTarget.classList.add(styles.draggedPdf);
     } else {
-      e.dataTransfer.setData('text/plain', ''); // Required for Firefox
+      // handle touch event
       draggedItem.current = index;
-      e.dataTransfer.effectAllowed = 'move';
-
       // Add visual cue by highlighting the dragged PDF
       e.currentTarget.classList.add(styles.draggedPdf);
     }
@@ -142,16 +140,14 @@ const PDFMerger: React.FC = () => {
     e: React.DragEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>
   ) => {
     e.preventDefault();
-    if ('touches' in e) {
+    if ('dataTransfer' in e) {
       e.dataTransfer.dropEffect = 'move';
 
       // Add visual cue by highlighting the drop target
       e.currentTarget.classList.add(styles.dropTarget);
     } else {
-      e.dataTransfer.dropEffect = 'move';
-
-      // Add visual cue by highlighting the drop target
-      e.currentTarget.classList.add(styles.dropTarget);
+      // handle touch event
+      e.preventDefault();
     }
   };
 
