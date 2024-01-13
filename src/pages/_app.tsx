@@ -1,6 +1,6 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
-import PDFMerger from './pdfmerger';
+import PDFMerger from '../components/pdfmerger';
 import 'font-awesome/css/font-awesome.min.css';
 
 export default function App({ Component, pageProps }: AppProps) {

@@ -73,8 +73,8 @@ const Home: React.FC = () => {
             <p className={styles.description}>
               Merge multiple PDF files into a single file.
             </p>
-            <Link href="/pdfmerger" legacyBehavior>
-              <a className={styles.toolButton}>Merge PDF</a>
+            <Link href="/pdfmerge">
+              <span className={styles.toolButton}>Merge PDF</span>
             </Link>
           </div>
           <div className={styles.toolBox}>
@@ -83,8 +83,8 @@ const Home: React.FC = () => {
             <p className={styles.description}>
               Split a PDF file into multiple files.
             </p>
-            <Link href="/pdfsplitter" legacyBehavior>
-              <a className={styles.toolButton}>Split PDF</a>
+            <Link href="/pdfsplitter">
+              <span className={styles.toolButton}>Split PDF</span>
             </Link>
           </div>
           <div className={styles.toolBox}>
@@ -93,8 +93,8 @@ const Home: React.FC = () => {
             <p className={styles.description}>
               Compress the size of a PDF file.
             </p>
-            <Link href="/pdfcompressor" legacyBehavior>
-              <a className={styles.toolButton}>Compress PDF</a>
+            <Link href="/pdfcompressor">
+              <span className={styles.toolButton}>Compress PDF</span>
             </Link>
           </div>
         </div>
