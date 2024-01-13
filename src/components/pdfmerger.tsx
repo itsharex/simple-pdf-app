@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react';
 import { PDFDocument } from 'pdf-lib';
 import styles from '@/styles/PDF.module.css';
-import { useEffect } from 'react';
 
 const PDFMerger: React.FC = () => {
   const [pdfs, setPdfs] = useState<File[]>([]);
@@ -22,7 +21,6 @@ const PDFMerger: React.FC = () => {
       }
     }
   };
-
 
   const handleMergedPdfNameChange = (
     e: React.ChangeEvent<HTMLInputElement>

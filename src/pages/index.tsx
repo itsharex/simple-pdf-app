@@ -1,7 +1,6 @@
-import Head from 'next/head';
-import Link from 'next/link';
 import styles from '@/styles/home.module.css';
 import { DefaultSeo } from 'next-seo';
+import Link from 'next/link';
 
 const SEO = {
   title: 'A Very Simple PDF App',
@@ -22,30 +21,9 @@ const SEO = {
   },
 };
 
-const Home: React.FC = () => {
-  const handleFileChange = () => {
-    // Logic to handle the selected file
-  };
-
-  const handlePageChange = () => {
-    // Logic to handle the page number change
-  };
-
-  const handleSplitPDF = () => {
-    // Logic to split the PDF
-    console.log('Splitting PDF...');
-  };
-
+const Home = () => {
   return (
     <div className={styles.appContainer}>
-      <Head>
-        <title>My PDF App</title>
-        <meta name="description" content="A collection of PDF tools" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <DefaultSeo {...SEO} />
-
       <header className={styles.header}>
         <h1>Transform Your PDFs</h1>
       </header>
