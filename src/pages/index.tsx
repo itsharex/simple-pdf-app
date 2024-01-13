@@ -23,6 +23,19 @@ const SEO = {
 };
 
 const Home: React.FC = () => {
+  const handleFileChange = () => {
+    // Logic to handle the selected file
+  };
+
+  const handlePageChange = () => {
+    // Logic to handle the page number change
+  };
+
+  const handleSplitPDF = () => {
+    // Logic to split the PDF
+    console.log('Splitting PDF...');
+  };
+
   return (
     <div className={styles.appContainer}>
       <Head>
@@ -62,6 +75,26 @@ const Home: React.FC = () => {
             </p>
             <Link href="/pdfmerger" legacyBehavior>
               <a className={styles.toolButton}>Merge PDF</a>
+            </Link>
+          </div>
+          <div className={styles.toolBox}>
+            <div className={styles.toolIcon} />
+            <h2>PDF Splitter</h2>
+            <p className={styles.description}>
+              Split a PDF file into multiple files.
+            </p>
+            <Link href="/pdfsplitter" legacyBehavior>
+              <a className={styles.toolButton}>Split PDF</a>
+            </Link>
+          </div>
+          <div className={styles.toolBox}>
+            <div className={styles.toolIcon} />
+            <h2>PDF Compressor</h2>
+            <p className={styles.description}>
+              Compress the size of a PDF file.
+            </p>
+            <Link href="/pdfcompressor" legacyBehavior>
+              <a className={styles.toolButton}>Compress PDF</a>
             </Link>
           </div>
         </div>
