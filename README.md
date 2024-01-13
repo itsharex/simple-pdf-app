@@ -19,13 +19,14 @@ Please feel free to contribute, I would really appreciate it.
 - Merge multiple PDFs into one document
 - Drag and drop PDF files
 - Download merged PDF with custom filename
+- Split PDFs
 
 More features are coming!
 
 ## Technologies Used
 
 - Tauri framework (Rust)
-- NextJS 13
+- NextJS 14
 - React
 - TypeScript
 - pdf-lib
