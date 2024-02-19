@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: #00021d73;
+  background-color: #00021d73; /* Consider using a solid color if the alpha channel causes readability issues */
   font-family: 'Open Sans', sans-serif;
   color: #fff;
 }
@@ -13,96 +13,10 @@
   padding: 1rem;
   font-size: 2rem;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-  align-self: center;
+  justify-content: center; /* Added to center content within the header */
+  width: 100%; /* Ensure full width */
 }
 
-.toolsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 3rem;
-}
-
-.toolBox {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 250px;
-  height: 350px;
-  margin: 1rem;
-  padding: 1rem;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease-in-out;
-}
-
-.toolBox:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.toolIcon {
-  width: 100px;
-  height: 100px;
-  background-image: url('https://cdn.statically.io/gh/Sudo-Ivan/MyWebsite-Assets/main/images/website/pdficon01.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.toolButton {
-  background-color: #b31b1b;
-  border: none;
-  border-radius: 30px;
-  color: white;
-  padding: 1rem 2rem;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-top: auto;
-  margin-bottom: 1rem;
-  transition: background-color 0.2s ease-in-out;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-}
-
-.toolButton:hover {
-  background-color: #8d1414;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 600px) {
-  .pdfButtonContainer {
-    margin-top: 2rem;
-  }
-
-  .downloadAppButton {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1rem;
-    position: static;
-  }
-}
-
-.intro {
-  margin: 2rem 0;
-  font-size: 1.2rem;
-  text-align: center;
-}
-
-.toolsHeader {
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-  text-align: center;
-}
-
-.toolsList {
-  list-style-type: disc;
-  list-style-position: inside;
-  font-size: 1.1rem;
-  text-align: center;
-}
 .githubLink {
   position: fixed;
   bottom: 20px;
@@ -110,4 +24,5 @@
   z-index: 999;
   font-size: 50px;
   color: #ffffff;
+  text-decoration: none; /* Remove underline from link */
 }
