@@ -1,4 +1,3 @@
-
 Using dribble artwork by Ivan Dubovik
 
 # A Simple PDF App
@@ -16,6 +15,7 @@ Please feel free to contribute, I would really appreciate it.
 - Download merged PDF with custom filename
 
 ## Coming Soon (2024)
+
 - [ ] Split PDFs
 - [ ] Add Watermarks
 - [ ] Compress PDF
