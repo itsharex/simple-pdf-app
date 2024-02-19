@@ -1,6 +1,3 @@
-![alt text](https://cdn.statically.io/gh/Sudo-Ivan/MyWebsite-Assets/main/images/website/pdfapphomepage.png)
-
-![alt text](https://cdn.statically.io/gh/Sudo-Ivan/MyWebsite-Assets/main/images/website/pdfmergershowcase1.png)
 
 Using dribble artwork by Ivan Dubovik
 
@@ -10,18 +7,22 @@ Using dribble artwork by Ivan Dubovik
 
 This is my first Tauri app and it is a simple PDF Utility GUI tool. The tool is intended for merging PDFs quickly and easily. It is a work in progress and I plan on adding more features and UI changes when I have more time.
 
-I built this for my dad, since he kept asking me to merge his PDFs so he didnt have to pay for Adobe.
-
 Please feel free to contribute, I would really appreciate it.
 
-## Features
+## Current Features
 
 - Merge multiple PDFs into one document
 - Drag and drop PDF files
 - Download merged PDF with custom filename
-- Split PDFs
 
-More features are coming!
+## Coming Soon (2024)
+- [ ] Split PDFs
+- [ ] Add Watermarks
+- [ ] Compress PDF
+- [ ] Convert PDF
+- [ ] Add more UI features
+- [ ] Add more tests
+- [ ] Performance improvements
 
 ## Technologies Used
 
@@ -33,7 +34,7 @@ More features are coming!
 
 ## Getting Started with the Desktop App
 
-`WIP - Not Released Yet`
+`WIP - Not Ready Yet`
 
 ## Contributing
 
