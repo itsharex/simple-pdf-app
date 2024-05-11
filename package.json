@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export",
+    "export": "export",
     "start": "next start",
     "tauri": "tauri",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
