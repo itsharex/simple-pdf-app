@@ -34,7 +34,7 @@ Please feel free to contribute, I would really appreciate it.
 
 ## Getting Started with the Desktop App
 
-`WIP - Not Ready Yet`
+`WIP`
 
 ## Contributing
 
