@@ -1,4 +1,4 @@
-Using dribble artwork by Ivan Dubovik
+Using dribble artwork by [Ivan Dubovik](https://vandubovik.github.io/)
 
 # A Simple PDF App
 
