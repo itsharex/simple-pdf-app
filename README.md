@@ -2,6 +2,8 @@ Using dribble artwork by [Ivan Dubovik](https://vandubovik.github.io/)
 
 # A Simple PDF App
 
+https://cdn.statically.io/gh/Sudo-Ivan/MyWebsite-Assets/main/images/pdfapp/Screenshot_20240511_160721.png
+
 ## Overview
 
 This is my first Tauri app and it is a simple PDF Utility GUI tool. The tool is intended for merging PDFs quickly and easily. It is a work in progress and I plan on adding more features and UI changes when I have more time.
