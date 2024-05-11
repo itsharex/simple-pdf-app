@@ -2,7 +2,7 @@ Using dribble artwork by [Ivan Dubovik](https://vandubovik.github.io/)
 
 # A Simple PDF App
 
-https://cdn.statically.io/gh/Sudo-Ivan/MyWebsite-Assets/main/images/pdfapp/Screenshot_20240511_160721.png
+![Screenshot_20240511_160721](https://cdn.statically.io/gh/Sudo-Ivan/MyWebsite-Assets/main/images/pdfapp/Screenshot_20240511_160721.png)
 
 ## Overview
 
