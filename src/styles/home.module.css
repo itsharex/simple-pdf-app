@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: #00021d73; /* Consider using a solid color if the alpha channel causes readability issues */
+  background-color: #00021d73;
   font-family: 'Open Sans', sans-serif;
   color: #fff;
 }
@@ -13,8 +13,8 @@
   padding: 1rem;
   font-size: 2rem;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-  justify-content: center; /* Added to center content within the header */
-  width: 100%; /* Ensure full width */
+  justify-content: center;
+  width: 100%;
 }
 
 .githubLink {
@@ -24,5 +24,5 @@
   z-index: 999;
   font-size: 50px;
   color: #ffffff;
-  text-decoration: none; /* Remove underline from link */
+  text-decoration: none;
 }

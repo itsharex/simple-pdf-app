@@ -9,7 +9,7 @@
   margin: 0 auto;
   height: 100vh;
   width: 100%;
-  background-color: #00000018; /* Add this line to add horizontal padding */
+  background-color: #00000018;
 }
 
 .header {
@@ -29,8 +29,8 @@
   gap: 0.5rem;
   margin-bottom: 1.5rem;
   width: 100%;
-  max-height: 60vh; /* add this line to set a maximum height */
-  overflow-y: auto; /* add this line to add a scrollbar when content exceeds maximum height */
+  max-height: 60vh;
+  overflow-y: auto;
 }
 
 .pdfItem {

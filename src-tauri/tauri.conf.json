@@ -7,8 +7,8 @@
     "distDir": "../out"
   },
   "package": {
-    "productName": "simplepdfutility",
-    "version": "0.1.0"
+    "productName": "simplepdfapp",
+    "version": "0.2.0"
   },
   "tauri": {
     "allowlist": {
@@ -17,7 +17,7 @@
     "bundle": {
       "active": true,
       "category": "DeveloperTool",
-      "copyright": "Ivan Ryan 2023",
+      "copyright": "Ivan Ryan 2024",
       "deb": {
         "depends": []
       },

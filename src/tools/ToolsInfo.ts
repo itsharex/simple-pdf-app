@@ -1,4 +1,3 @@
-// src/tools/ToolsInfo.ts
 const ToolsInfo = [
   {
     title: 'PDF Merger Tool',

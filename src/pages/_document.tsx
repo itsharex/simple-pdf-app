@@ -3,10 +3,10 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 const SEO = {
   title: 'A Very Simple PDF App',
-  description: 'PDF App 100% Free & Open-Source.',
+  description: 'PDF App Free, Open-Source & Client-side.',
   openGraph: {
     title: 'A Very Simple PDF App',
-    description: 'PDF App 100% Free & Open-Source.',
+    description: 'PDF App Free, Open-Source & Client-side.',
     url: 'https://simplepdf.vercel.app/',
     type: 'website',
     images: [

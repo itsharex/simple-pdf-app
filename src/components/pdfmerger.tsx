@@ -171,7 +171,6 @@ const PDFMerger: React.FC = () => {
   return (
     <>
       <div className={styles.container} onTouchMove={(e) => e.preventDefault()}>
-        {/* Add the GitHub icon */}
         <div className={styles.github}>
           <a
             href="https://github.com/Sudo-Ivan/simple-pdf-app"
